@@ -1,0 +1,63 @@
+body {
+    background-color: black;
+}
+.reg {
+    max-width: 400px;
+    margin: 10em auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: black;
+  }
+  
+  .reg h1 {
+    text-align: center;
+    color: #fff;
+  }
+  
+  .reg h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+  }
+  
+  #sign {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .reg input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .sub-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .sub-button:hover {
+    background-color: #45a049;
+  }
+  
+  .goToLogin {
+    background-color: #2196F3;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .goToLogin:hover {
+    background-color: #0b7dda;
+  }
+  
+  /* Добавете по необходимост стилове за Link компонента */
+  

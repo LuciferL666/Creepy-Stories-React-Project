@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Moon+Dance&display=swap');
+.site-header {
+    border-bottom: 2px solid transparent;
+    font-family: 'Moon Dance', cursive;
+    font-size: 30px;
+}
+
+.site-header .section-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    
+}
+
+.site-header .site-title {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+}
+
+.site-header .site-title a{
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    color: #F9841B;
+}
+
+.site-header .site-subtitle {
+    display: none;
+    padding: 0;
+}

@@ -1,0 +1,80 @@
+.site-footer {
+    background-color: #000;
+    color: #fff;
+    background-image: url('https://images8.alphacoders.com/636/636421.jpg');
+}
+
+.site-footer .section-container {
+    padding: 4em 1em;
+}
+
+
+.site-footer .columns .panel {
+    flex: auto;
+    
+}
+
+.site-footer .columns .panel ul {
+    padding: 0.3em 0 0;
+}
+
+.site-footer .columns .panel li,
+.site-footer .columns .panel a {
+    display: block;
+}
+
+.site-footer .columns .panel a {
+    color: #ddddddb9;
+    text-decoration: none;
+    padding: 0.3em 0;
+}
+
+.site-footer .columns .panel a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+.site-footer .info {
+    padding-top: 2em;
+    border-top: 2px solid red;
+}
+
+.site-footer .info ul {
+    display: flex;
+    padding: 0;
+}
+
+.site-footer .info li,
+.site-footer .info a {
+    display: block;
+}
+
+.site-footer .info li {
+    padding: 0 1em 0 0;
+}
+
+.site-footer .info a {
+    color: #ddddddb9;
+    text-decoration: none;
+    line-height: 0.85;
+    border-bottom: 1px solid rgb(255,255,255,0.3 )
+}
+
+.site-footer .info a:hover {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+h6 {
+    font-size: 25px;
+}
+
+@media (min-width: 600px){
+    .site-footer .columns {
+        display: flex;
+    }
+    .site-footer .info {
+        display: flex;
+        justify-content: space-between;
+    }
+}

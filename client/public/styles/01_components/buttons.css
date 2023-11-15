@@ -1,0 +1,25 @@
+.login {
+    background-color: transparent;
+    color: #F9841B;
+    cursor: pointer;
+    font-weight: bold;
+    }
+
+.register {
+background-color: transparent;
+color: #F9841B;
+cursor: pointer;
+font-weight: bold;
+}
+
+.logout {
+    background-color: transparent;
+    color: #F9841B;
+    cursor: pointer;
+    font-weight: bold;
+    }
+
+button {
+    border-radius: 0.2em;
+    padding: 0em 0.6em;
+}

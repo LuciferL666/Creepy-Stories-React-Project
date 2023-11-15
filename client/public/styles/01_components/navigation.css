@@ -1,0 +1,29 @@
+@media (min-width: 600px){
+.site-navigation {
+    display: flex;
+    font-size: 25px;
+    }
+}
+
+.site-navigation ul{
+    display: flex;
+    padding: 0;
+}
+
+.site-navigation li,
+.site-navigation a {
+    display: block;
+}
+
+.site-navigation li a {
+    display: block;
+    padding: 0.5em;
+    color: #F9841B;
+    text-decoration: none;
+    border: solid transparent;
+    border-width: 2px 0;
+}
+
+.site-navigation  li a:hover {
+    border-bottom-color:#F9841B;
+}

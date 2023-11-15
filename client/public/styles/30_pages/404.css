@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Metal+Mania&family=Raleway:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jolly+Lodger&family=Merriweather:wght@300&family=Metal+Mania&family=Raleway:wght@100&display=swap');
+
+
+:root {
+    --bg:  #111;
+    --accent: #f23;
+    --shadow: #f237;
+}
+
+main {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    background-color: var(--bg);
+    overflow: hidden;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-content: center;
+    position: relative;
+    isolation: isolate;
+    margin-right: 20em;
+}
+
+.image {
+    display: grid;
+    place-content: center;
+    
+}
+
+.image img {
+    width: 22vw;
+    height: 40vw;
+   filter: saturate(0%);
+}
+
+.message {
+    display: grid;
+    place-content: center;
+    max-width: 640px;
+}
+
+.message h1 {
+    color: white;
+    font-size: 24px;
+    letter-spacing: 4px;
+    margin-bottom: 1.5rem;
+    font-family: "metal mania", cursive;
+}
+
+.message .text {
+    font-size: clamp(3rem, 10vh, 6rem);
+    color: var(--bg);
+    letter-spacing: 2px;
+    margin-block: 1rem;
+    text-shadow: 0 0 1.25rem var(--accent),
+    0 0 0.25rem var(--accent);
+    font-family: "jolly lodger", cursive;
+}
+
+button {
+    max-width: 200px;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    background-color: var(--accent);
+    color: var(--bg);
+    margin-block: 1.5rem;
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+
+
+button:hover {
+    background-color: var(--bg);
+    box-shadow: 0 0 1.5rem 0.25rem var(--shadow);
+    color: var(--accent);
+    outline: none;
+}
