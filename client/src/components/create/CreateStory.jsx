@@ -2,9 +2,9 @@ import '../../../public/styles/30_pages/create.css'
 
 export default function CreateStory () {
     return (
-        <section id="create-story" className="story">
-            <form id="create">
-                <div className="story-container">
+        <section className="story">
+            <form className='createStory'>
+                <div className="storyContain">
                     <h1>Create Story</h1>
                     <label htmlFor="story-title">Horror:</label>
                     <input type="text" id="title" name="title" placeholder="Enter story title" />

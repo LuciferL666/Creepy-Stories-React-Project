@@ -1,19 +1,50 @@
 .story {
-    display: flex;
-    flex-wrap: wrap; /* Преход на елементите на следващия ред при достигане на максимален брой на ред */
-    justify-content: space-between; /* Разпределя елементите равномерно по ширина на контейнера */
-  }
-  
-  .story-container {
-    width: calc(33.33% - 20px); /* Ширина на контейнера за история, която дава максимум три на ред */
-    margin-bottom: 20px; /* Отстояние между контейнерите */
-    padding: 15px; /* Вътрешни отстояния в контейнера */
-    box-sizing: border-box; /* Включва padding и border в широчината на елемента */
-  }
-  
-  .story-container h1 {
-    text-align: center; /* Центрира заглавието на историята */
-  }
-  
-  /* Стилове за етикетите и инпут полетата, може да се допълнят по ваше усмотрение */
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.createStory {
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.storyContain {
+  display: flex;
+  flex-direction: column;
+}
+
+.storyContain h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.story-submit-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.story-submit-btn:hover {
+  background-color: #45a049;
+}
