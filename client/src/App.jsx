@@ -8,6 +8,7 @@ import Privacy from './components/Privacy';
 import Err from './components/Err';
 import Register from './components/Register';
 import Login from './components/login/Login';
+import CreateStory from './components/create/CreateStory';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
 <Route path='/privacy' element={ <Privacy /> }/>
 <Route path='/register' element={ <Register /> }/>
 <Route path='/login' element={ <Login />}/>
+<Route path='/create' element={ <CreateStory />}/>
 </Routes>
 <Footer />  
 

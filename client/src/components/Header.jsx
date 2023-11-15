@@ -19,7 +19,7 @@ export default function Header() {
             <nav className="site-navigation">
               <ul>
                 <li><Link to="/catalog">Catalog</Link></li>
-                <li><Link to="/add">Create</Link></li>
+                <li><Link to="/create">Create</Link></li>
                 <li><Link to="/profile">Profile</Link></li>
                 <li><Link to="/login">
                 <button className="login">Login</button>
