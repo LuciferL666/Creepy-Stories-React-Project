@@ -7,7 +7,7 @@ export default function Login () {
 
         <div className="log">
       <h1>Login</h1>
-      <h2>You want to be able to write then sign up now</h2>
+      <h2>Get in and start writing</h2>
 <form action="" id="log">
   <input type="email" class="email-log" placeholder="Your Email" required/>
   <input type="password" class="password-login" placeholder="Password" required/>
