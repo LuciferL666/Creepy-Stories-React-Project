@@ -2,11 +2,11 @@ import { Routes, Route } from 'react-router-dom'
 import './App.css'
 
 
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
 import Privacy from './components/Privacy';
 import Err from './components/Err';
-import Register from './components/Register';
+import Register from './components/register/Register';
 import Login from './components/login/Login';
 import CreateStory from './components/create/CreateStory';
 import Catalog from './components/catalog/Catalog';
