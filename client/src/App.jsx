@@ -9,6 +9,7 @@ import Err from './components/Err';
 import Register from './components/Register';
 import Login from './components/login/Login';
 import CreateStory from './components/create/CreateStory';
+import Catalog from './components/catalog/Catalog';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
 <Route path='/register' element={ <Register /> }/>
 <Route path='/login' element={ <Login />}/>
 <Route path='/create' element={ <CreateStory />}/>
+<Route path='/catalog' element={ <Catalog />}/>
 </Routes>
 <Footer />  
 
