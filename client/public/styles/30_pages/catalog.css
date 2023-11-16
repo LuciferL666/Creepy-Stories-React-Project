@@ -1,0 +1,57 @@
+.cata {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  color: white; /* Цвят на текста */
+}
+
+h1 {
+  text-align: center;
+  width: 100%;
+  color: white; /* Бял цвят на заглавието */
+}
+
+.allStories {
+  width: calc(16.66% - 20px); /* Максимум по 6 сторита на ред */
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+.allStories .allStories-info {
+  background-color: #f9f9f9; /* Фон на информацията за историята */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+
+.allStories img {
+  width: 100%; /* Ширина на картинката */
+  border-radius: 5px;
+  margin-bottom: 10px; /* Отстояние под картинката */
+}
+
+.allStories h2 {
+  font-size: 18px;
+  margin-bottom: 5px; /* Отстояние под заглавието */
+}
+
+.allStories h6 {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px; /* Отстояние под подзаглавието */
+}
+
+.allStories-info a {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.allStories-info a:hover {
+  background-color: #45a049;
+}
