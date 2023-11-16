@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-import '../../public/styles/30_pages/register.css'
+import '../../../public/styles/30_pages/register.css'
 
 
 export default function Register () {
