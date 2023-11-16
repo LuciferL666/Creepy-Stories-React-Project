@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import '../../public/styles/10_layout/footer.css'
+import '../../../public/styles/10_layout/footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
