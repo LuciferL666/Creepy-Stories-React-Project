@@ -1,9 +1,18 @@
 import '../../../public/styles/30_pages/create.css'
 
 export default function CreateStory () {
+    const createStorySubmitHandler = (e) => {
+        e.preventDefault();
+
+        const storyData = Object.fromEntries(new FormData(e.currentTarget))
+
+        console.log(storyData);
+    }
+
+
     return (
         <section className="story">
-            <form className='createStory'>
+            <form className='createStory' onSubmit={createStorySubmitHandler}>
                 <div className="storyContain">
                     <h1>Create Story</h1>
                     <label htmlFor="story-title">title:</label>
