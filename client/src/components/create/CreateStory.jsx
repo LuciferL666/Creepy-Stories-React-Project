@@ -1,12 +1,26 @@
+import { useNavigate } from 'react-router-dom'
+
 import '../../../public/styles/30_pages/create.css'
 
+import * as storyService from '../../services/storyService';
+
 export default function CreateStory () {
-    const createStorySubmitHandler = (e) => {
+    const navigate = useNavigate()
+
+    const createStorySubmitHandler = async (e) => {
         e.preventDefault();
 
         const storyData = Object.fromEntries(new FormData(e.currentTarget))
 
-        console.log(storyData);
+        try {
+            await storyService.create(storyData)
+
+            navigate('/catalog');
+        } catch (err) {
+            //error notification
+            console.log(err);
+        }
+
     }
 
 
