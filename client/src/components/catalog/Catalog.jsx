@@ -1,9 +1,20 @@
 import { Link } from 'react-router-dom'
-
 import '../../../public/styles/30_pages/catalog.css'
+import { useEffect, useState } from 'react'
+
+
+import * as storyService from '../../services/storyService'
 
 
 export default function Catalog () {
+    const [stories, setStories] = useState([]);
+    useEffect(() => {
+        storyService.getAll()
+            .then(result => setStories(result));
+    }, []);
+
+    console.log(stories);
+
     return (
         <section className='cata'>
             <h1>All Stories</h1>
