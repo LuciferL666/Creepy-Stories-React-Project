@@ -1,0 +1,133 @@
+/* Global styles for the whole section */
+.story-details {
+    padding: 20px;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  /* Styles for the main header */
+  .story-details h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Styles for the story header */
+  .info-section .story-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .story-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .story-header h1 {
+    margin-bottom: 5px;
+    font-size: 24px;
+  }
+  
+  .type {
+    color: #666;
+    font-size: 14px;
+  }
+  
+  /* Styles for the text content */
+  .text {
+    text-align: justify;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  /* Styles for the comments section */
+  .details-comments {
+    margin-bottom: 20px;
+  }
+  
+  .details-comments h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  .no-comment {
+    font-style: italic;
+    color: #888;
+  }
+  
+  .comment {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Styles for the buttons */
+  .detailsBtn {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-right: 10px;
+    background-color: #4caf50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  /* Styles for the comment form */
+  .create-comment {
+    margin-bottom: 20px;
+  }
+  
+  .create-comment label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .formDetails textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: vertical;
+  }
+  
+  .btnSubm {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Media query for responsiveness */
+  @media screen and (max-width: 768px) {
+    .story-details {
+      padding: 10px;
+    }
+  
+    .story-header h1 {
+      font-size: 20px;
+    }
+  
+    .details-comments h2 {
+      font-size: 16px;
+    }
+  
+    .button {
+      padding: 6px 12px;
+      font-size: 14px;
+    }
+  }
+  
