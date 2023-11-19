@@ -10,6 +10,12 @@ export const getAll = async () => {
    return Object.values(result);
 };
 
+export const getOne = async (storyId) => {
+   const result = await request.get(`${baseUrl}/${storyId}`)
+
+   return result;
+};
+
 export const create = async (storyData) => {
    const result = await request.post(baseUrl, storyData);
 
