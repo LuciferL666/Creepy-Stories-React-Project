@@ -10,6 +10,7 @@ import Register from './components/register/Register';
 import Login from './components/login/Login';
 import CreateStory from './components/create/CreateStory';
 import Catalog from './components/catalog/Catalog';
+import Details from './components/details/Details';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
 <Route path='/login' element={ <Login />}/>
 <Route path='/create' element={ <CreateStory />}/>
 <Route path='/catalog' element={ <Catalog />}/>
+<Route path='/story/:storyId/details' element={ <Details />}/>
 </Routes>
 <Footer />  
 
