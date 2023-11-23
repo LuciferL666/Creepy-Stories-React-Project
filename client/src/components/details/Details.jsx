@@ -15,7 +15,7 @@ export default function Details () {
         storyService.getOne(storyId)
             .then(setStory);
 
-        commentService.getAll()
+        commentService.getAll(storyId)
             .then(setComments)
     }, [storyId]);
 
@@ -30,8 +30,7 @@ export default function Details () {
             formData.get('comment')
             );
 
-            setComments(state => [...state, newComment]);
-            console.log(newComment);
+            setComments(state => [...state, newComment])
     }
 
     return (
@@ -61,7 +60,7 @@ export default function Details () {
 
                 {comments.length === 0 && (
                 <p className="no-comment">No comments.</p>
-                )};
+                )}
             </div>
 
              {/* <!-- Edit/Delete buttons ( Only for creator of this game )  --> 
