@@ -3,11 +3,18 @@ import useForm from "../../hooks/useForm";
 
 import "../../../public/styles/30_pages/login.css";
 
-export default function Login() {
-  const {values, onChange, onSubmit} = useForm({
-    email: '',  
-    password: '',
-  })
+const LoginFormKyes = {
+  Email: 'email',
+  Password: 'password',
+}
+
+export default function Login({
+  loginSubmitHandler,
+}) {
+  const {values, onChange, onSubmit} = useForm(loginSubmitHandler, {
+    [LoginFormKyes.Email]: '',  
+    [LoginFormKyes.Password]: '',
+  });
 
   return (
     <div className="log">
@@ -17,18 +24,20 @@ export default function Login() {
         <input
           type="email"
           class="email-log"
+          name={LoginFormKyes.Email}
           placeholder="Your Email"
           required
           onChange={onChange}
-          value={values.email}
+          value={values[LoginFormKyes.Email]}
         />
         <input
           type="password"
           class="password-login"
+          name={LoginFormKyes.Password}
           placeholder="Password"
           required
           onChange={onChange}
-          value={values.password}
+          value={values[LoginFormKyes.Password]}
         />
         <button className="sub-button" type="submit">
           Submit

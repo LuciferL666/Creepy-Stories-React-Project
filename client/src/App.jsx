@@ -11,9 +11,15 @@ import Login from './components/login/Login';
 import CreateStory from './components/create/CreateStory';
 import Catalog from './components/catalog/Catalog';
 import Details from './components/details/Details';
+import { useState } from 'react';
 
 
 function App() {
+  const [auth, setAuth] = useState({});
+
+  const loginSubmitHandler = (values) => {
+    console.log(values);
+  }
 
   return (
     <>
@@ -22,7 +28,7 @@ function App() {
 <Routes>  
 <Route path='/privacy' element={ <Privacy /> }/>
 <Route path='/register' element={ <Register /> }/>
-<Route path='/login' element={ <Login />}/>
+<Route path='/login' element={ <Login loginSubmitHandler={loginSubmitHandler} />}/>
 <Route path='/create' element={ <CreateStory />}/>
 <Route path='/catalog' element={ <Catalog />}/>
 <Route path='/story/:storyId/details' element={ <Details />}/>
