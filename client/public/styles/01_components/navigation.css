@@ -1,29 +1,37 @@
-@media (min-width: 600px){
-.site-navigation {
+.site-navigation ul {
     display: flex;
-    font-size: 25px;
-    }
-}
-
-.site-navigation ul{
-    display: flex;
+    list-style: none;
     padding: 0;
-}
-
-.site-navigation li,
-.site-navigation a {
-    display: block;
-}
-
-.site-navigation li a {
-    display: block;
-    padding: 0.5em;
-    color: #F9841B;
+  }
+  
+  .site-navigation li {
+    margin-right: 10px; /* Разстояние между елементите на навигацията */
+  }
+  
+  .site-navigation a {
     text-decoration: none;
-    border: solid transparent;
-    border-width: 2px 0;
-}
-
-.site-navigation  li a:hover {
-    border-bottom-color:#F9841B;
-}
+    color: #F9841B;
+    font-size: 25px;
+    padding: 0.5em;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom-color 0.3s;
+  }
+  
+  .site-navigation a:hover {
+    border-bottom-color: #F9841B; /* Цвят на долния бордер при ховър */
+  }
+  
+  /* Стилизация на бутоните */
+  .site-navigation .logged,
+  .site-navigation .notLogged {
+    display: flex;
+    align-items: center;
+  }
+  
+  .site-navigation .logged button,
+  .site-navigation .notLogged button {
+    /* Стилове на бутоните при логнат и нелогнат потребител */
+  }
+  
+  /* Стилизация на другите елементи или класове, ако е необходимо */
+  
