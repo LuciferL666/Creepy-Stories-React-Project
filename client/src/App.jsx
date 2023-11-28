@@ -12,6 +12,7 @@ import CreateStory from './components/create/CreateStory';
 import Catalog from './components/catalog/Catalog';
 import Details from './components/details/Details';
 import { useState } from 'react';
+import AuthContext from './contexts/authContext';
 
 
 function App() {
@@ -22,13 +23,14 @@ function App() {
   }
 
   return (
+    <AuthContext.Provider value={{ loginSubmitHandler }}>
     <>
     
 <Header />
 <Routes>  
 <Route path='/privacy' element={ <Privacy /> }/>
 <Route path='/register' element={ <Register /> }/>
-<Route path='/login' element={ <Login loginSubmitHandler={loginSubmitHandler} />}/>
+<Route path='/login' element={ <Login />}/>
 <Route path='/create' element={ <CreateStory />}/>
 <Route path='/catalog' element={ <Catalog />}/>
 <Route path='/story/:storyId/details' element={ <Details />}/>
@@ -36,6 +38,7 @@ function App() {
 <Footer />  
 
   </>
+  </AuthContext.Provider>
   )
 }
 
