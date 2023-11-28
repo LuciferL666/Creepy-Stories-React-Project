@@ -5,59 +5,66 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: black;
+  color: #fff;
+  text-align: center;
+  font-family: sans-serif;
 }
-  
-  .log h1 {
-    text-align: center;
-    color: #fff;
-  }
-  
-  .log h2 {
-    text-align: center;
-    color: #666;
-    margin-bottom: 20px; /* По-голямо разстояние отгоре и отдолу за подзаглавието */
-  }
-  
-  #log {
-    display: flex;
-    flex-direction: column;
-  }
+
+.log h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.log h2 {
+  font-size: 25px;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+#log {
+  display: flex;
+  flex-direction: column;
+}
+
+.log input {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: #F9841B;
+  font-size: 25px;
+  font-family: "Dancing Script", sans-serif;
+}
+
+.sub-button,
 .goToRegistration {
-    align-items: center;
-    text-align: center;
-  }
-  
-  .log input {
-    width: 100%;
-    margin-bottom: 15px; /* Разстояние отгоре и отдолу за полетата за въвеждане */
-    padding: 10px;
-    box-sizing: border-box;
-  }
-  
-  .sub-button {
-    background-color: #4caf50;
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .sub-button:hover {
-    background-color: #45a049;
-  }
-  
-  .goToRegistration {
-    align-items: center;
-    background-color: #2196F3;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .goToRegistration:hover {
-    background-color: #0b7dda;
-  }
-      
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Dancing Script", sans-serif;
+}
+
+.sub-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.sub-button:hover {
+  background-color: #45a049;
+}
+
+.goToRegistration {
+  background-color: #2196F3;
+  color: white;
+}
+
+.goToRegistration:hover {
+  background-color: #0b7dda;
+}
