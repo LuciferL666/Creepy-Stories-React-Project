@@ -15,6 +15,7 @@ import Login from './components/login/Login';
 import CreateStory from './components/create/CreateStory';
 import Catalog from './components/catalog/Catalog';
 import Details from './components/details/Details';
+import Home from './components/Home';
 
 
 function App() {
@@ -29,12 +30,20 @@ function App() {
    navigate(Path.Home)
   };
 
+  const values = {
+    loginSubmitHandler,
+    username: auth.username,
+    email: auth.email,
+    isAuthenticated: !!auth.username,
+  }
+
   return (
-    <AuthContext.Provider value={{ loginSubmitHandler }}>
+    <AuthContext.Provider value={values}>
     <>
     
 <Header />
 <Routes>  
+<Route path={Path.Home} element={ <Home/> }/>
 <Route path='/privacy' element={ <Privacy /> }/>
 <Route path='/register' element={ <Register /> }/>
 <Route path='/login' element={ <Login />}/>
