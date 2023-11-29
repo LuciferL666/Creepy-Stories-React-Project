@@ -16,6 +16,7 @@ import CreateStory from './components/create/CreateStory';
 import Catalog from './components/catalog/Catalog';
 import Details from './components/details/Details';
 import Home from './components/Home';
+import Logout from './components/logout/Logout';
 
 
 function App() {
@@ -36,14 +37,20 @@ function App() {
     setAuth(result);
 
     navigate(Path.Home)
+  };
+
+  const logoutHandler = () => {
+    setAuth({});
+    
   }
 
   const values = {
     loginSubmitHandler,
     registerSubmitHandler,
+    logoutHandler,
     username: auth.username || auth.email,
     email: auth.email,
-    isAuthenticated: !!auth.email,
+    isAuthenticated: !!auth.accessToken,
   }
 
   return (
@@ -59,6 +66,7 @@ function App() {
 <Route path='/create' element={ <CreateStory />}/>
 <Route path='/catalog' element={ <Catalog />}/>
 <Route path='/story/:storyId/details' element={ <Details />}/>
+<Route path={Path.Logout} element={ <Logout />} /> 
 </Routes>
 <Footer />  
 
