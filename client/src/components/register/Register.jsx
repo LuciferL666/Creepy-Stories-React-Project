@@ -16,7 +16,6 @@ const RegisterFormKeys = {
 export default function Register() {
   const { registerSubmitHandler } = useContext(AuthContext);
   const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
-    [RegisterFormKeys.Name]: "",
     [RegisterFormKeys.Email]: "",
     [RegisterFormKeys.Password]: "",
     [RegisterFormKeys.PasswordConfirm]: "",

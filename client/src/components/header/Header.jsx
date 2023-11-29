@@ -33,6 +33,7 @@ export default function Header() {
                 <li><Link to="/logout">
                 <button className="logout">Logout</button>
                 </Link></li>
+                <span>| {username}</span>
                 </div>
                 )}
                 {!isAuthenticated && (
