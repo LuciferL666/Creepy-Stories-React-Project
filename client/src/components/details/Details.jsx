@@ -1,12 +1,14 @@
 import '../../../public/styles/30_pages/details.css'
 
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
 
 import * as storyService from '../../services/storyService'
 import * as commentService from '../../services/commentService'
+import AuthContext from '../../contexts/authContext';
 
 export default function Details () {
+    const { email } = useContext(AuthContext)
     const [story, setStory] = useState({});
     const[comments, setComments] = useState([])
     const { storyId } = useParams();
@@ -26,11 +28,12 @@ export default function Details () {
 
         const newComment = await commentService.create(
             storyId,
-            formData.get('username'),
             formData.get('comment')
             );
 
-            setComments(state => [...state, newComment])
+
+
+            setComments(state => [...state, {...newComment, author: {email}}])
     }
 
     return (
@@ -51,9 +54,9 @@ export default function Details () {
                 <h2>Comments:</h2>
                 <ul>
                      {/* <!-- list all comments for current game (If any) -->  */}
-                    {comments.map(({ _id, username, text}) => (
+                    {comments.map(({ _id, text, }) => (
                         <li key={_id} className="comment">
-                            <p>{username}: {text}</p>
+                            <p>{email}: {text}</p>
                         </li>
                         ))}
                 </ul>
@@ -75,7 +78,7 @@ export default function Details () {
         <article className="create-comment">
             <label>Add new comment:</label>
             <form className="formDetails" onSubmit={addCommentHandler}>
-                <input type="text" className="username" name="username" placeholder='username' />
+                
                 <textarea name="comment" placeholder="Comment......"></textarea>
                 <input className="btnSubm" type="submit" value="Add Comment" />
             </form>
