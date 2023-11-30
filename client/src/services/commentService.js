@@ -1,14 +1,14 @@
 import * as request from '../lib/request';
 
-const baseUrl = 'http://localhost:3030/jsonstore/comments';
+const baseUrl = 'http://localhost:3030/data/comments';
 
 export const getAll = async (storyId) => {
     const query = new URLSearchParams({
         where: `storyId="${storyId}"`
     })
-    const result = await request.get(`${baseUrl}`);
+    const result = await request.get(`${baseUrl}?${query}`);
 
-    return Object.values(result).filter(comment => comment.storyId === storyId);
+    return result;
 };
 
 export const create = async (storyId, username, text) => {
