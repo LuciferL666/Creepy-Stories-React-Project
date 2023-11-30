@@ -8,9 +8,13 @@ import StoryItem from './story-item/StoryItem';
 
 export default function Catalog () {
     const [stories, setStories] = useState([]);
+
     useEffect(() => {
         storyService.getAll()
-            .then(result => setStories(result));
+            .then(result => setStories(result))
+            .catch(err => {
+                console.log('No stories');
+            });
     }, []);
 
     console.log(stories);
