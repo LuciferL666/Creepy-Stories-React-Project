@@ -13,7 +13,7 @@ export default function Catalog () {
         storyService.getAll()
             .then(result => setStories(result))
             .catch(err => {
-                console.log('No stories');
+                console.log('No stories yet be the first to post!');
             });
     }, []);
 
