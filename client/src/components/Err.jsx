@@ -1,25 +1,27 @@
+import React from 'react';
 
+import '../../public/styles/30_pages/404.css'
 
-export default function Err (){
+const Err = () => {
     return (
 
 <main>
-    <audio src="../2020-10-27_-_Haunted_Carnival_-_www.FesliyanStudios.com_Steve_Oxen.mp3">HALLO</audio>
-    <section>
-        <div class="image">
-            <img src="../SeekPng.com_reaper-png_142193.png" alt="grim" />
+    <section className='section404'>
+        <div className="image404">
+            <img className='404' src="../../images/SeekPng.com_reaper-png_142193.png" alt="grim" />
         </div>
-        <div class="message">
-            <h1>Error 404</h1>
-            <div class="text">
+        <div className="message404">
+            <h1 className="404">Error 404</h1>
+            <div className="text404">
                 Oops!
                 <br />
                 You have reached a dead end.
             </div>
-            <a href="home.html"><button>Go home</button></a>
         </div>
     </section>
 </main>    
 
 )
-}
+};
+
+export default Err;
