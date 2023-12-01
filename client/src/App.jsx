@@ -1,8 +1,6 @@
-import { useState } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
 
-import * as authService from './services/authService'
 import { AuthProvider } from './contexts/authContext';
 import Path from './paths';
 
@@ -20,51 +18,16 @@ import Logout from './components/logout/Logout';
 
 
 function App() {
-  const navigate = useNavigate();
-  const [auth, setAuth] = useState(() => {
-    localStorage.removeItem('accessToken');
 
-    return {};
-  });
-
-  const loginSubmitHandler = async (values) => {
-   const result = await authService.login(values.email, values.password);
-  
-   setAuth(result);
-   localStorage.setItem('accessToken', result.accessToken);
-   navigate(Path.Home)
-  };
-
-  const registerSubmitHandler = async (values) => {
-    const result = await authService.register(values.email, values.password);
-
-    setAuth(result);
-    localStorage.setItem('accessToken', result.accessToken);
-    navigate(Path.Home)
-  };
-
-  const logoutHandler = () => {
-    setAuth({});
-    localStorage.removeItem('accessToken')
-    
-  }
-
-  const values = {
-    loginSubmitHandler,
-    registerSubmitHandler,
-    logoutHandler,
-    username: auth.username || auth.email,
-    email: auth.email,
-    isAuthenticated: !!auth.accessToken,
-  }
 
   return (
-    <AuthProvider value={values}>
+    <AuthProvider>
     <div id='box'>
     
 <Header />
 <Routes>  
 <Route path={Path.Home} element={ <Home/> }/>
+<Route path='*' element={ <Err />}/>
 <Route path='/privacy' element={ <Privacy /> }/>
 <Route path='/register' element={ <Register /> }/>
 <Route path='/login' element={ <Login />}/>
