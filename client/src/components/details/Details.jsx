@@ -12,6 +12,10 @@ export default function Details () {
     const [story, setStory] = useState({});
     const[comments, setComments] = useState([])
     const { storyId } = useParams();
+    const {
+        isAuthenticated,
+        username,
+      } = useContext(AuthContext);
 
     useEffect (() => {
         storyService.getOne(storyId)
@@ -75,14 +79,16 @@ export default function Details () {
 
          {/* <!-- Bonus -->
         <!-- Add Comment ( Only for logged-in users, which is not creators of the current game ) -->  */}
+            {isAuthenticated && (
         <article className="create-comment">
             <label>Add new comment:</label>
             <form className="formDetails" onSubmit={addCommentHandler}>
-                
+
                 <textarea name="comment" placeholder="Comment......"></textarea>
                 <input className="btnSubm" type="submit" value="Add Comment" />
             </form>
         </article>
+                )}
 
     </section>
     )
