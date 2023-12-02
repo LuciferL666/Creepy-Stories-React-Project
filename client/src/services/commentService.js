@@ -5,7 +5,7 @@ const baseUrl = 'http://localhost:3030/data/comments';
 export const getAll = async (storyId) => {
     const query = new URLSearchParams({
         where: `storyId="${storyId}"`,
-        load: `owner=_ownerId:users`
+        load: `owner=_ownerId:users`,
     });
     const result = await request.get(`${baseUrl}?${query}`);
 
