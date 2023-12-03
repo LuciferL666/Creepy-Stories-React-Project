@@ -1,7 +1,7 @@
 import '../../../public/styles/30_pages/details.css'
 
 import { useContext, useEffect, useReducer, useState } from 'react';
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 import * as storyService from '../../services/storyService'
 import * as commentService from '../../services/commentService'
@@ -85,8 +85,8 @@ export default function Details () {
             {userId === story._ownerId && (
 
                 <div className="detailsBtn">
-                <a href="#" className="button">Edit</a>
-                <a href="#" className="button">Delete</a>
+                <Link href="/story/:storyId/details/edit" className="button">Edit</Link>
+                <Link href="/story/:storyId/details/delete" className="button">Delete</Link>
             </div>
             )}
         </div>
