@@ -1,16 +1,19 @@
 import '../../../public/styles/30_pages/details.css'
 
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useReducer, useState } from 'react';
 import { useParams } from 'react-router-dom'
 
 import * as storyService from '../../services/storyService'
 import * as commentService from '../../services/commentService'
 import AuthContext from '../../contexts/authContext';
+import reducer from './commentReducer';
+
 
 export default function Details () {
     const { email } = useContext(AuthContext)
     const [story, setStory] = useState({});
-    const[comments, setComments] = useState([])
+    //const[comments, setComments] = useState([])
+    const [comments, dispatch] = useReducer(reducer, [])
     const { storyId } = useParams();
     const {
         isAuthenticated,
@@ -22,7 +25,12 @@ export default function Details () {
             .then(setStory);
 
         commentService.getAll(storyId)
-            .then(setComments)
+            .then((result) => {
+                dispatch({
+                    type: 'GET_ALL_COMMENTS',
+                    payload: result,
+                })
+            });
     }, [storyId]);
 
     const addCommentHandler = async (e) => {
@@ -36,9 +44,13 @@ export default function Details () {
             );
 
 
-
-            setComments(state => [...state, {...newComment, author: {email}}])
-    }
+            newComment.owner = {email};
+            //setComments(state => [...state, {...newComment, author: {email}}])
+            dispatch({
+                type: 'ADD_COMMENT',
+                payload: newComment
+            })
+        }
 
     return (
         <section className="story-details">
@@ -58,7 +70,7 @@ export default function Details () {
                 <h2>Comments:</h2>
                 <ul>
                      {/* <!-- list all comments for current game (If any) -->  */}
-                    {comments.map(({ _id, text, }) => (
+                    {comments.map(({ _id, text, owner: {email} }) => (
                         <li key={_id} className="comment">
                             <p>{email}: {text}</p>
                         </li>
