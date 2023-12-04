@@ -15,12 +15,16 @@ import Catalog from './components/catalog/Catalog';
 import Details from './components/details/Details';
 import Home from './components/Home';
 import Logout from './components/logout/Logout';
+import EditStory from './components/story-edit/EditStory';
+import ErrorBoundary from './components/ErrorBoundary';
 
 
 function App() {
 
 
   return (
+    <ErrorBoundary>
+
     <AuthProvider>
     <div id='box'>
     
@@ -34,12 +38,14 @@ function App() {
 <Route path='/create' element={ <CreateStory />}/>
 <Route path='/catalog' element={ <Catalog />}/>
 <Route path='/story/:storyId/details' element={ <Details />}/>
+<Route path={Path.StoryEdit} element={ <EditStory />}/>
 <Route path={Path.Logout} element={ <Logout />} /> 
 </Routes>
 <Footer />  
 
   </div>
   </AuthProvider>
+    </ErrorBoundary>
   )
 }
 
