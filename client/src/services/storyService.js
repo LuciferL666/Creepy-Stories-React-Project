@@ -27,3 +27,5 @@ export const edit = async (storyId, storyData) => {
 
     return result;
 };
+
+export const del = async (storyId) => request.del(`${baseUrl}/${storyId}`)
