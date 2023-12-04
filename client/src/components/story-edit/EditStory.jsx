@@ -23,7 +23,11 @@ export default function EditStory () {
         });
     }, [storyId]);
 
-    const editStorySubmitHandler = async (values) => {
+    const editStorySubmitHandler = async (e) => {
+        e.preventDefault();
+
+        const values = Object.fromEntries(new FormData(e.currentTarget));
+        
         try {
             await storyService.edit(storyId, values)
 
@@ -35,25 +39,31 @@ export default function EditStory () {
 
     }
 
-    const {values, onChange, onSubmit} = useForm(editStorySubmitHandler, story);
+    const onChange = (e) => {
+        setStory(state => ({
+            ...state,
+            [e.target.name]: e.target.value
+        }))
+    }
+
 
     return (
         <section className="story">
-            <form className='createStory' onSubmit={onSubmit}>
+            <form className='createStory' onSubmit={editStorySubmitHandler}>
                 <div className="storyContain">
                     <h1>Create Story</h1>
                     <label htmlFor="story-title">title:</label>
-                    <input type="text" id="title" name="title" value={values.title} onChange={onChange} placeholder="Enter story title" />
+                    <input type="text" id="title" name="title" value={story.title} onChange={onChange} placeholder="Enter story title" />
 
                     <label htmlFor="category">Category:</label>
-                    <input type="text" id="category" name="category" value={values.category} onChange={onChange} placeholder="Enter story category" />
+                    <input type="text" id="category" name="category" value={story.category} onChange={onChange} placeholder="Enter story category" />
 
                     
                     <label htmlFor="story-img">Image:</label>
-                    <input type="text" id="imageUrl" name="imageUrl" value={values.imageUrl} onChange={onChange} placeholder="Enter story imgUrl" />
+                    <input type="text" id="imageUrl" name="imageUrl" value={story.imageUrl} onChange={onChange} placeholder="Enter story imgUrl" />
 
                     <label htmlFor="summary">Summary:</label>
-                    <textarea name="summary" value={values.summary} onChange={onChange} id="summary" cols="30" rows="10"></textarea>
+                    <textarea name="summary" value={story.summary} onChange={onChange} id="summary" cols="30" rows="10"></textarea>
                     <input className="story-submit-btn" type="submit" value="Edit" />
                 </div>
             </form>
