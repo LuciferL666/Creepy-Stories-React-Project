@@ -1,6 +1,6 @@
 import '../../../public/styles/30_pages/details.css'
 
-import { useContext, useEffect, useReducer, useState } from 'react';
+import { useContext, useEffect, useMemo, useReducer, useState } from 'react';
 import { Link, useParams } from 'react-router-dom'
 
 import * as storyService from '../../services/storyService'
@@ -8,6 +8,8 @@ import * as commentService from '../../services/commentService'
 import AuthContext from '../../contexts/authContext';
 import reducer from './commentReducer';
 import useForm from '../../hooks/useForm'
+import { pathToUrl } from '../../utils/pathUtils';
+import Path from '../../paths';
 
 
 export default function Details () {
@@ -45,11 +47,12 @@ export default function Details () {
             })
         }
 
-        const {values, onChange, onSubmit} = useForm(addCommentHandler, {
-            comment: '',
-        });
+        const initialValues = useMemo(() => ({
+                comment: '',
+        }), [])
 
-         
+        const {values, onChange, onSubmit} = useForm(addCommentHandler, initialValues);
+
         
         return (
             <section className="story-details">
@@ -85,8 +88,8 @@ export default function Details () {
             {userId === story._ownerId && (
 
                 <div className="detailsBtn">
-                <Link href="/story/:storyId/details/edit" className="button">Edit</Link>
-                <Link href="/story/:storyId/details/delete" className="button">Delete</Link>
+                <Link to={pathToUrl(Path.StoryEdit, {storyId})} className="button">Edit</Link>
+                <Link to="/story/:storyId/details/delete" className="button">Delete</Link>
             </div>
             )}
         </div>
