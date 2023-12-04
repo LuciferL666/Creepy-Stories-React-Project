@@ -17,6 +17,7 @@ import Home from './components/Home';
 import Logout from './components/logout/Logout';
 import EditStory from './components/story-edit/EditStory';
 import ErrorBoundary from './components/ErrorBoundary';
+import AuthGuard from './components/guards/AuthGuard';
 
 
 function App() {
@@ -35,11 +36,16 @@ function App() {
 <Route path='/privacy' element={ <Privacy /> }/>
 <Route path='/register' element={ <Register /> }/>
 <Route path='/login' element={ <Login />}/>
-<Route path='/create' element={ <CreateStory />}/>
 <Route path='/catalog' element={ <Catalog />}/>
 <Route path='/story/:storyId/details' element={ <Details />}/>
+
+<Route element={<AuthGuard />}>
+<Route path='/create' element={<CreateStory />}/>
 <Route path={Path.StoryEdit} element={ <EditStory />}/>
-<Route path={Path.Logout} element={ <Logout />} /> 
+<Route path={Path.Logout} element={ <Logout />} />
+
+</Route>
+
 </Routes>
 <Footer />  
 
