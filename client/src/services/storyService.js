@@ -21,3 +21,9 @@ export const create = async (storyData) => {
 
     return result;
 };
+
+export const edit = async (storyId, storyData) => {
+   const result = await request.put(`${baseUrl}/${storyId}`, storyData);
+
+    return result;
+};
