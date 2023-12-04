@@ -1,7 +1,7 @@
 import '../../../public/styles/30_pages/details.css'
 
 import { useContext, useEffect, useMemo, useReducer, useState } from 'react';
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 
 import * as storyService from '../../services/storyService'
 import * as commentService from '../../services/commentService'
@@ -13,6 +13,7 @@ import Path from '../../paths';
 
 
 export default function Details () {
+    const navigate = useNavigate();
     const { email, userId } = useContext(AuthContext)
     const [story, setStory] = useState({});
     const [comments, dispatch] = useReducer(reducer, [])
@@ -47,11 +48,21 @@ export default function Details () {
             })
         }
 
-        const initialValues = useMemo(() => ({
-                comment: '',
-        }), [])
+        const deleteButtonClickHandler = async () => {
+            const hasConfirmed = confirm(`Are you sure you want to delete your ${story.title}`)
+        
+            if (hasConfirmed){
+               await storyService.del(storyId);
 
-        const {values, onChange, onSubmit} = useForm(addCommentHandler, initialValues);
+               navigate('/catalog')
+            }
+        
+        }
+
+
+        const {values, onChange, onSubmit} = useForm(addCommentHandler, {
+            comment: '',
+    });
 
         
         return (
@@ -89,7 +100,7 @@ export default function Details () {
 
                 <div className="detailsBtn">
                 <Link to={pathToUrl(Path.StoryEdit, {storyId})} className="button">Edit</Link>
-                <Link to="/story/:storyId/details/delete" className="button">Delete</Link>
+                <button className='button' onClick={deleteButtonClickHandler}>Delete</button>
             </div>
             )}
         </div>
