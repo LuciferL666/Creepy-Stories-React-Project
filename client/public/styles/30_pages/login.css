@@ -13,12 +13,13 @@
 .log h1 {
   font-size: 40px;
   margin-bottom: 20px;
+  color: #fff;
 }
 
 .log h2 {
   font-size: 25px;
   margin-bottom: 20px;
-  color: #666;
+  color: #ccc;
 }
 
 #log {
@@ -32,9 +33,9 @@
   padding: 10px;
   box-sizing: border-box;
   border: 2px solid #fff;
-  background-color: transparent;
-  color: #F9841B;
-  font-size: 25px;
+  background-color: white; /* Промяна на фоновия цвят */
+  color: black; /* Промяна на цвета на текста */
+  font-size: 15px;
   font-family: "Dancing Script", sans-serif;
 }
 
@@ -52,19 +53,22 @@
 }
 
 .sub-button {
-  background-color: #4caf50;
+  background-color: #8b0000;
   color: white;
+  border: 3px solid #8b0000;
 }
 
 .sub-button:hover {
-  background-color: #45a049;
+  background-color: black;
+  color: #8b0000;
 }
 
 .goToRegistration {
-  background-color: #2196F3;
-  color: white;
+  background-color: black;
+  color: #8b0000;
 }
 
 .goToRegistration:hover {
-  background-color: #0b7dda;
+  background-color: #8b0000;
+  color: white;
 }
