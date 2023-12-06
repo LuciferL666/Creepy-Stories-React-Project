@@ -19,7 +19,7 @@ export default function Header() {
       <header className="site-header section">
         <div className="section-container">
             <div className="site-branding">
-              <h1 className="site-title"><Link to='/'>Your Stories</Link></h1>
+              <h1 className="site-title"><Link to='/'>Your Creepy Stories</Link></h1>
               <p className="site-subtitle">Post your stories read stories!</p>
             </div>
 
