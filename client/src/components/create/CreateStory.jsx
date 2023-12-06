@@ -29,7 +29,7 @@ export default function CreateStory () {
             <form className='createStory' onSubmit={createStorySubmitHandler}>
                 <div className="storyContain">
                     <h1>Create Story</h1>
-                    <label htmlFor="story-title">title:</label>
+                    <label htmlFor="story-title">Title:</label>
                     <input type="text" id="title" name="title" placeholder="Enter story title" />
 
                     <label htmlFor="category">Category:</label>
