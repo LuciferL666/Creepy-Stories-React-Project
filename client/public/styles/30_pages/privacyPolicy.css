@@ -1,0 +1,46 @@
+/* Основни стилове */
+.policy {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #ccc;
+}
+
+.policy h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #8b0000;
+}
+
+.policy p {
+  line-height: 1.6;
+}
+
+.policy ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.policy li {
+  margin-bottom: 10px;
+}
+
+.policy strong {
+  color: #8b0000;
+}
+
+/* Специфични стилове за контактите */
+.policy h2:last-of-type {
+  margin-top: 40px;
+}
+
+/* Стилове за линкове */
+.policy a {
+  color: #8b0000;
+  text-decoration: none;
+}
+
+.policy a:hover {
+  text-decoration: underline;
+}
