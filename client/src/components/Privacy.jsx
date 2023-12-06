@@ -1,16 +1,15 @@
+import "../../public/styles/30_pages/privacyPolicy.css"
+
 export default function Privacy (){
         const currentDate = new Date().toLocaleDateString();
     return (
-
-        
-
-        <main>
-        <h2><strong>Privacy Policy for "Your Creepy Stories"</strong></h2>
-        <p>Last updated: {currentDate}</p>
+        <main className="policy">
+        <h2 className="policy"><strong>Privacy Policy for "Your Creepy Stories"</strong></h2>
+        <p className="policy">Last updated: {currentDate}</p>
         <p>Welcome to "Your Creepy Stories" (the "Website"). This Privacy Policy is designed to help you understand how we collect, use, disclose, and safeguard your personal information. By using the Website, you agree to the terms outlined in this policy.</p>
         <h2><strong>Information We Collect:</strong></h2>
-        <ul>
-            <li><strong>Personal Information:</strong> We may collect personal information such as your name, email address, or other details when you submit creepy stories or interact with our Website.</li>
+        <ul className="policy">
+            <li className="policy"><strong>Personal Information:</strong> We may collect personal information such as your name, email address, or other details when you submit creepy stories or interact with our Website.</li>
             <li><strong>Usage Information:</strong> We may collect non-personal information about how you use and navigate the Website, such as the pages you visit and the time spent on each page.</li>
         </ul>
 
