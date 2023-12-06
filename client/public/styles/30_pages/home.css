@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+  }
+  
+  .home {
+    text-align: center;
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+  
+  .home header {
+    color: #8b0000; /* Кърваво червен цвят на шрифта */
+  }
+  
+  .latest-stories,
+  .horror-authors {
+    margin-top: 5em;
+  }
+  
+  .latest-stories {
+    margin-bottom: 20em; /* Разстояние под .latest-stories */
+  }
+  
+  .latest-stories ul,
+  .horror-authors ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2em;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .latest-stories li,
+  .horror-authors li {
+    flex-basis: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 1px solid #8b0000;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .latest-stories img,
+  .horror-authors img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .latest-stories h3,
+  .horror-authors h3 {
+    margin: 10px 0;
+  }
+  
+  .latest-stories button,
+  .horror-authors button {
+    background-color: #8b0000; /* Кърваво червен цвят на бутона */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .latest-stories button:hover,
+  .horror-authors button:hover {
+    background-color: #660000; /* По-тъмно кърваво червен цвят при ховър */
+  }
+  
