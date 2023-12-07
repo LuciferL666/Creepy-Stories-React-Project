@@ -5,6 +5,7 @@ Creepy Pasta Stories is a platform that allows users to read and share chilling 
 
 # Key Features
 **Catalog:** Browse through a collection of chilling stories.
+
 **Create:** Write and submit your own horror stories.
 **Details:** Dive deeper into a specific story to read its details.
 **Comments:** Engage with the community by commenting on stories.
