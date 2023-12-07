@@ -17,8 +17,6 @@ export default function Catalog () {
             });
     }, []);
 
-    console.log(stories);
-
     return (
         <section className='cata'>
             <h1>All Stories</h1>
