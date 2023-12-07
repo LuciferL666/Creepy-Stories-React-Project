@@ -1,9 +1,9 @@
-@import '../public/styles/00_modules/reset.css';
-@import '../public/styles/00_modules/typography.css';
+@import '/styles/00_modules/reset.css';
+@import '/styles/00_modules/typography.css';
 
-@import '../public/styles/01_components/buttons.css';
-@import '/styles/01_components/navigation.css';
 @import '/styles/01_components/buttons.css';
+@import '/styles/01_components/navigation.css';
+
 
 @import '/styles/10_layout/header.css';
 @import '/styles/10_layout/footer.css';
