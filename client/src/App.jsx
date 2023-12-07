@@ -13,7 +13,7 @@ import Login from './components/login/Login';
 import CreateStory from './components/create/CreateStory';
 import Catalog from './components/catalog/Catalog';
 import Details from './components/details/Details';
-import Home from './components/Home';
+import Home from './components/home/Home';
 import Logout from './components/logout/Logout';
 import EditStory from './components/story-edit/EditStory';
 import ErrorBoundary from './components/ErrorBoundary';
