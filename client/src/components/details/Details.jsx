@@ -78,11 +78,10 @@ export default function Details () {
 
             <p className="text">{story.summary}</p>
   
-            {/* <!-- Bonus ( for Guests and Users ) --> */}
+
             <div className="details-comments">
                 <h2>Comments:</h2>
                 <ul>
-                     {/* <!-- list all comments for current game (If any) -->  */}
                     {comments.map(({ _id, text, owner: {email} }) => (
                         <li key={_id} className="comment">
                             <p>{email}: {text}</p>
@@ -95,7 +94,6 @@ export default function Details () {
                 )}
             </div>
 
-             {/* <!-- Edit/Delete buttons ( Only for creator of this game )  -->  */}
             {userId === story._ownerId && (
 
                 <div className="detailsBtn">
@@ -104,9 +102,6 @@ export default function Details () {
             </div>
             )}
         </div>
-
-         {/* <!-- Bonus -->
-        <!-- Add Comment ( Only for logged-in users, which is not creators of the current game ) -->  */}
             {isAuthenticated && (
         <article className="create-comment">
             <label>Add new comment:</label>
