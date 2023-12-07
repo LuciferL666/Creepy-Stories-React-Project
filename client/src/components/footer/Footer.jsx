@@ -55,13 +55,11 @@ export default function Footer () {
                 <ul>
                     <li><Link to="/privacy">Privacy Policy</Link></li>
                     <li><Link to="#">Terms of Service</Link></li>
-                    {/* <li><Link to="#"></Link></li> */}
                 </ul>
                 
                 </div>
 
             </div>
         </footer>
-        // <footer><p>Copyright &copy;2023 Designed by <span class="designer">Peyko Georgiev</span></p></footer>
     )
 }
