@@ -16,20 +16,29 @@ export const AuthProvider = ({
     const navigate = useNavigate();
     const [auth, setAuth] = usePersistedState('auth', {})
   
-    const loginSubmitHandler = async (values) => {
-     const result = await authService.login(values.email, values.password);
-    
-     setAuth(result);
+      const loginSubmitHandler = async (values) => {
+    try {
+      const result = await authService.login(values.email, values.password);
+      setAuth(result);
+  
      localStorage.setItem('accessToken', result.accessToken);
      navigate(Path.Home)
-    };
-  
+    } catch (error) {
+          alert('Wrong password or email! Please try again.');
+          console.error(error);
+        }
+      }
+
     const registerSubmitHandler = async (values) => {
+      if (values.repeatPassword !== values.password) {
+        alert('Password missmatch! Please make sure your passwords match.');
+        return;
+      }
+    
       const result = await authService.register(values.email, values.password);
-  
       setAuth(result);
       localStorage.setItem('accessToken', result.accessToken);
-      navigate(Path.Home)
+      navigate(Path.Home);
     };
   
     const logoutHandler = () => {
