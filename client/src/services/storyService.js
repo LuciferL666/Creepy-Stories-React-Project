@@ -20,7 +20,18 @@ export const create = async (storyData) => {
    const result = await request.post(baseUrl, storyData);
 
     return result;
-};
+}
+
+export const getLatest = async () => {
+   const query = new URLSearchParams({
+      offset: 0,
+      pageSize: 3
+   });
+
+   const result = await request.get(`${baseUrl}?${query}`)
+
+   return result;
+}
 
 export const edit = async (storyId, storyData) => {
    const result = await request.put(`${baseUrl}/${storyId}`, storyData);
@@ -29,3 +40,4 @@ export const edit = async (storyId, storyData) => {
 };
 
 export const del = async (storyId) => request.del(`${baseUrl}/${storyId}`)
+
