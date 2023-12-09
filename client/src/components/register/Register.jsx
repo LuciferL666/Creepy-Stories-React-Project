@@ -10,7 +10,7 @@ const RegisterFormKeys = {
   Name: "name",
   Email: "email",
   Password: "password",
-  PasswordConfirm: "repeat-password",
+  PasswordConfirm: "repeatPassword",
 };
 
 export default function Register() {
@@ -20,52 +20,56 @@ export default function Register() {
     [RegisterFormKeys.Password]: "",
     [RegisterFormKeys.PasswordConfirm]: "",
   });
+  
 
   return (
     <div className="reg">
       <h1>Sign Up</h1>
       <h2>You want to be able to write then sign up now</h2>
       <form id="sign" onSubmit={onSubmit}>
-        <input
-          type="name"
-          className="name-reg"
-          placeholder="Your Name"
-          required
-          onChange={onChange}
-          values={values[RegisterFormKeys.Name]}
-        />
-        <input
-          type="email"
-          class="email-reg"
-          name="email"
-          placeholder="Your Email"
-          required
-          onChange={onChange}
-          values={values[RegisterFormKeys.Email]}
-        />
-        <input
-          type="password"
-          class="password-reg"
-          name="password"
-          placeholder="Password"
-          required
-          onChange={onChange}
-          values={values[RegisterFormKeys.Password]}
-        />
-        <input
-          type="password"
-          class="rPassword-reg"
-          name="repeat-password"
-          placeholder="Repeat Password"
-          required
-          onChange={onChange}
-          values={values[RegisterFormKeys.PasswordConfirm]}
-        />
+       <input
+  type="text"
+  className="name-input"
+  placeholder="Your Name"
+  required
+  onChange={onChange}
+  defaultValue={values[RegisterFormKeys.Name] || ''}
+/>
+
+<input
+  type="email"
+  className="email-input"
+  name="email"
+  placeholder="Your Email"
+  required
+  onChange={onChange}
+  value={values[RegisterFormKeys.Email]}
+/>
+
+<input
+  type="password"
+  className="password-input"
+  name="password"
+  placeholder="Password"
+  required
+  onChange={onChange}
+  value={values[RegisterFormKeys.Password]}
+/>
+
+<input
+  type="password"
+  className="rPassword-input"
+  name="repeatPassword"
+  placeholder="Repeat Password"
+  required
+  onChange={onChange}
+  value={values[RegisterFormKeys.PasswordConfirm]}
+/>
         <button className="sub-button" type="submit">
           Submit
         </button>
         <Link to="/login">
-          <button type="button" class="goToLogin">
+          <button type="button" className="goToLogin">
             Have an account
           </button>
         </Link>
