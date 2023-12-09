@@ -29,7 +29,6 @@ export default function Header() {
                 {isAuthenticated && (
                   <div className="logged">
                 <li><Link to="/create">Create</Link></li>
-                <li><Link to="/profile">Profile</Link></li>
                 <li><Link to="/logout">
                 <button className="logout">Logout</button>
                 </Link></li>
@@ -52,16 +51,5 @@ export default function Header() {
             </nav>
         </div>
       </header>
-// {/* <div class="topnav">
-// <Link to="/">
-//           <label className="logo">Halloween Memories</label>
-// </Link>
-// 
-// 
-// 
-// 
-// 
-// 
-// </div> */}
   );
 }
