@@ -16,7 +16,6 @@ import Details from './components/details/Details';
 import Home from './components/home/Home';
 import Logout from './components/logout/Logout';
 import EditStory from './components/story-edit/EditStory';
-import ErrorBoundary from './components/ErrorBoundary';
 import AuthGuard from './components/guards/AuthGuard';
 
 
@@ -24,7 +23,6 @@ function App() {
 
 
   return (
-    <ErrorBoundary>
 
     <AuthProvider>
     <div id='box'>
@@ -51,7 +49,6 @@ function App() {
 
   </div>
   </AuthProvider>
-    </ErrorBoundary>
   )
 }
 
