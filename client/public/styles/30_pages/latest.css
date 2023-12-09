@@ -1,0 +1,81 @@
+/* Променени стилове за списъка */
+.storiesLatest {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Променени стилове за елементите в списъка */
+  .storiesLatest li {
+    flex-basis: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 1px solid #8b0000;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .storiesLatest ul {
+
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 2em;
+      list-style: none;
+      padding: 0;
+    }
+  
+  /* Променени стилове за картинките */
+  .storiesLatest img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+
+  }
+  
+  /* Променени стилове за заглавията */
+  .storiesLatest h3 {
+    margin: 10px 0;
+  }
+  
+  /* Променени стилове за бутона */
+  .storiesLatest .btnDetailsLatest {
+    background-color: #8b0000;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: auto;
+  }
+  
+  .storiesLatest .btnDetailsLatest:hover {
+    background-color: #660000;
+  }
+  
+  
+
+  
+  /* Стил за бутона в елементите на списъка */
+  .storiesLatest .btnDetailsLatest {
+    background-color: #8b0000;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+  
+  .storiesLatest .btnDetailsLatest:hover {
+    background-color: #660000;
+  }
