@@ -12,7 +12,7 @@ body {
   }
   
   .home header {
-    color: #8b0000; /* Кърваво червен цвят на шрифта */
+    color: #8b0000; 
   }
   
   .latest-stories,
@@ -21,7 +21,7 @@ body {
   }
   
   .latest-stories {
-    margin-bottom: 20em; /* Разстояние под .latest-stories */
+    margin-bottom: 5em; 
   }
   
   .latest-stories ul,
@@ -48,13 +48,6 @@ body {
     text-align: center;
   }
   
-  .latest-stories img,
-  .horror-authors img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
   
   .latest-stories h3,
   .horror-authors h3 {
@@ -63,7 +56,7 @@ body {
   
   .latest-stories button,
   .horror-authors button {
-    background-color: #8b0000; /* Кърваво червен цвят на бутона */
+    background-color: #8b0000; 
     color: white;
     border: none;
     padding: 8px 16px;
@@ -73,6 +66,16 @@ body {
   
   .latest-stories button:hover,
   .horror-authors button:hover {
-    background-color: #660000; /* По-тъмно кърваво червен цвят при ховър */
+    background-color: #660000; 
   }
   
+  img {
+    width: 300px; 
+    height: 300px; 
+    overflow: hidden; 
+    border-radius: 8px;
+  }
+  
+   img {
+    clip: rect(0px, 200px, 200px, 0px);
+   }
