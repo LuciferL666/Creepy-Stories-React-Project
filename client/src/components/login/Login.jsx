@@ -44,11 +44,12 @@ export default function Login() {
         <button className="sub-button" type="submit">
           Submit
         </button>
-        <Link to="/login">
-          <button type="button" class="goToRegistration">
+        <Link to="/register">
+          <button type="button" className="goToRegistration">
             Don't have an account
           </button>
         </Link>
+        
       </form>
     </div>
   );
