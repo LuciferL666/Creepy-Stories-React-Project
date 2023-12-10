@@ -7,15 +7,15 @@ import AuthContext from "../../contexts/authContext";
 import "../../../public/styles/30_pages/login.css";
 
 const LoginFormKeys = {
-  Email: 'email',
-  Password: 'password',
-}
+  Email: "email",
+  Password: "password",
+};
 
 export default function Login() {
-  const { loginSubmitHandler } = useContext(AuthContext)
-  const {values, onChange, onSubmit} = useForm(loginSubmitHandler, {
-    [LoginFormKeys.Email]: '',  
-    [LoginFormKeys.Password]: '',
+  const { loginSubmitHandler } = useContext(AuthContext);
+  const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
+    [LoginFormKeys.Email]: "",
+    [LoginFormKeys.Password]: "",
   });
 
   return (
@@ -49,7 +49,6 @@ export default function Login() {
             Don't have an account
           </button>
         </Link>
-        
       </form>
     </div>
   );
