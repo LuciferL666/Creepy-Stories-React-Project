@@ -1,34 +1,30 @@
+import "../../../public/styles/30_pages/catalog.css";
+import { useEffect, useState } from "react";
 
-import '../../../public/styles/30_pages/catalog.css'
-import { useEffect, useState } from 'react'
+import * as storyService from "../../services/storyService";
+import StoryItem from "./story-item/StoryItem";
 
+export default function Catalog() {
+  const [stories, setStories] = useState([]);
 
-import * as storyService from '../../services/storyService'
-import StoryItem from './story-item/StoryItem';
+  useEffect(() => {
+    storyService
+      .getAll()
+      .then((result) => setStories(result))
+      .catch((err) => {
+        console.log("No stories yet be the first to post!");
+      });
+  }, []);
 
-export default function Catalog () {
-    const [stories, setStories] = useState([]);
+  return (
+    <section className="cata">
+      <h1>All Stories</h1>
 
-    useEffect(() => {
-        storyService.getAll()
-            .then(result => setStories(result))
-            .catch(err => {
-                console.log('No stories yet be the first to post!');
-            });
-    }, []);
+      {stories.map((story) => (
+        <StoryItem key={story._id} {...story} />
+      ))}
 
-    return (
-        <section className='cata'>
-            <h1>All Stories</h1>
-            {/* <!-- Display div: with information about every game (if any) --> */}
-            {stories.map(story => (
-                <StoryItem key={story._id} {...story}/>
-            ))}
-
-                {stories.length === 0 && (
-                <h3 class="no-stories">No articles yet</h3>
-                )}
-            
-        </section>
-    )
+      {stories.length === 0 && <h3 class="no-stories">No articles yet</h3>}
+    </section>
+  );
 }
