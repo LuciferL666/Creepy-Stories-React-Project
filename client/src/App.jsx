@@ -1,6 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { AuthProvider } from "./contexts/authContext";
 import Path from "./paths";
 
@@ -22,6 +25,7 @@ function App() {
   return (
     <AuthProvider>
       <div id="box">
+      <ToastContainer />
         <Header />
         <Routes>
           <Route path={Path.Home} element={<Home />} />
