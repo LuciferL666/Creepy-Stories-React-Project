@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import "../../../public/styles/30_pages/create.css";
 
@@ -9,18 +11,40 @@ export default function CreateStory() {
 
   const createStorySubmitHandler = async (e) => {
     e.preventDefault();
-
+  
     const storyData = Object.fromEntries(new FormData(e.currentTarget));
-
+  
+    // Проверка за празни полета
+    if (storyData.title.trim() === '') {
+      toast.error('Please provide a title');
+      return;
+    }
+  
+    if (storyData.category.trim() === '') {
+      toast.error('Please provide a category');
+      return;
+    }
+  
+    if (storyData.imageUrl.trim() === '') {
+      toast.error('Please provide the story image URL');
+      return;
+    }
+  
+    if (storyData.summary.trim() === '') {
+      toast.error('Please provide a summary');
+      return;
+    }
+  
     try {
       await storyService.create(storyData);
-
+  
       navigate("/catalog");
     } catch (err) {
       //error notification
       console.log(err);
     }
   };
+  
 
   return (
     <section className="story">
@@ -33,6 +57,7 @@ export default function CreateStory() {
             id="title"
             name="title"
             placeholder="Enter story title"
+            
           />
 
           <label htmlFor="category">Category:</label>
@@ -41,6 +66,7 @@ export default function CreateStory() {
             id="category"
             name="category"
             placeholder="Enter story category"
+            
           />
 
           <label htmlFor="story-img">Image:</label>
@@ -49,6 +75,7 @@ export default function CreateStory() {
             id="imageUrl"
             name="imageUrl"
             placeholder="Enter story imgUrl"
+            
           />
 
           <label htmlFor="summary">Summary:</label>
