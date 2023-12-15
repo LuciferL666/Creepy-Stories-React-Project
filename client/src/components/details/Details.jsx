@@ -2,6 +2,8 @@ import "../../../public/styles/30_pages/details.css";
 
 import { useContext, useEffect, useMemo, useReducer, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import * as storyService from "../../services/storyService";
 import * as commentService from "../../services/commentService";
@@ -30,6 +32,14 @@ export default function Details() {
   }, [storyId]);
 
   const addCommentHandler = async (values) => {
+    if (!values.comment.trim()) {
+      toast.error("Please provide text.");
+      return;
+    }
+    if (values.comment.length <= 1) {
+      toast.error("Please write more text.");
+      return;
+    }
     const newComment = await commentService.create(storyId, values.comment);
 
     newComment.owner = { email };
