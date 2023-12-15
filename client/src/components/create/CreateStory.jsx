@@ -14,6 +14,7 @@ export default function CreateStory() {
   
     const storyData = Object.fromEntries(new FormData(e.currentTarget));
   
+    const httpRegex = /^(http)/;
     // Проверка за празни полета
     if (storyData.title.trim() === '') {
       toast.error('Please provide a title');
@@ -27,6 +28,11 @@ export default function CreateStory() {
   
     if (storyData.imageUrl.trim() === '') {
       toast.error('Please provide the story image URL');
+      return;
+    }
+
+    if (!httpRegex.test(storyData.imageUrl)) {
+      toast.error("Please provide a valid URL starting with 'http'.");
       return;
     }
   
