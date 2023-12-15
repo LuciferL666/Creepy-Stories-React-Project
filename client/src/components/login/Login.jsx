@@ -18,6 +18,7 @@ export default function Login() {
     [LoginFormKeys.Password]: "",
   });
 
+
   return (
     <div className="log">
       <h1>Login</h1>
@@ -28,7 +29,6 @@ export default function Login() {
           class="email-log"
           name={LoginFormKeys.Email}
           placeholder="Your Email"
-          required
           onChange={onChange}
           value={values[LoginFormKeys.Email]}
         />
@@ -37,7 +37,7 @@ export default function Login() {
           class="password-login"
           name={LoginFormKeys.Password}
           placeholder="Password"
-          required
+          
           onChange={onChange}
           value={values[LoginFormKeys.Password]}
         />
