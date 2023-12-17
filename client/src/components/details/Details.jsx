@@ -2,8 +2,8 @@ import "../../../public/styles/30_pages/details.css";
 
 import { useContext, useEffect, useMemo, useReducer, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import * as storyService from "../../services/storyService";
 import * as commentService from "../../services/commentService";
