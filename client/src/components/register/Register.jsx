@@ -30,7 +30,6 @@ export default function Register() {
           className="email-input"
           name="email"
           placeholder="Your Email"
-          
           onChange={onChange}
           value={values[RegisterFormKeys.Email]}
         />
@@ -40,7 +39,6 @@ export default function Register() {
           className="password-input"
           name="password"
           placeholder="Password"
-          
           onChange={onChange}
           value={values[RegisterFormKeys.Password]}
         />
