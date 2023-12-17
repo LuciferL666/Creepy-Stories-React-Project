@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"; 
+import "react-toastify/dist/ReactToastify.css";
 
 import * as authService from "../services/authService";
 import Path from "../paths";
@@ -35,13 +35,12 @@ export const AuthProvider = ({ children }) => {
   };
 
   const registerSubmitHandler = async (values) => {
-
     if (!values.email || !values.password || !values.repeatPassword) {
       toast.error("Please provide email, password and repeat password.");
       return;
     }
 
-    if (values.password.trim() === '' || values.repeatPassword.trim() === '') {
+    if (values.password.trim() === "" || values.repeatPassword.trim() === "") {
       toast.error("Please provide correct password.");
       return;
     }
@@ -50,7 +49,6 @@ export const AuthProvider = ({ children }) => {
       toast.error("Password missmatch! Please make sure your passwords match.");
       return;
     }
-
 
     const result = await authService.register(values.email, values.password);
     setAuth(result);
