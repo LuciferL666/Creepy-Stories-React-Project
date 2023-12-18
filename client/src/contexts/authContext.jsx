@@ -45,6 +45,10 @@ export const AuthProvider = ({ children }) => {
       return;
     }
 
+    if (values.password.length < 3) {
+      toast.error("Password must be longer then 3 symbols.");
+      return;
+    }
     if (values.repeatPassword !== values.password) {
       toast.error("Password missmatch! Please make sure your passwords match.");
       return;
