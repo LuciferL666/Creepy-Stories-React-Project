@@ -20,6 +20,8 @@ import Home from "./components/home/Home";
 import Logout from "./components/logout/Logout";
 import EditStory from "./components/story-edit/EditStory";
 import AuthGuard from "./components/guards/AuthGuard";
+import IsAuthGuard from "./components/guards/IsAuthGuard";
+import Weather from "./components/weather/Weather";
 
 function App() {
   return (
@@ -27,14 +29,20 @@ function App() {
       <div id="box">
       <ToastContainer />
         <Header />
+        <Weather />
         <Routes>
           <Route path={Path.Home} element={<Home />} />
           <Route path="*" element={<Err />} />
           <Route path="/privacy" element={<Privacy />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/story/:storyId/details" element={<Details />} />
+          
+          <Route element={<IsAuthGuard />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+
+          </Route>
+          
 
           <Route element={<AuthGuard />}>
             <Route path="/create" element={<CreateStory />} />
