@@ -66,6 +66,18 @@ export default function Home({ _id, accessToken, email }) {
           </li>
         </ul>
       </section>
+
+      <section className="emailSend">
+        <h1>You can send us email with advice for more horror authors</h1>
+        <form action="https://formsubmit.co/peyko92gm@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_subject" value="New Email from Creepy Pasta" required /> 
+        <input type="email" name="email" placeholder="Email Address" required /> 
+        <input type="text" name="message" placeholder="write your message here" required /> 
+        <button type="submit">Send</button> 
+
+        </form>
+      </section>
     </div>
   );
 }
