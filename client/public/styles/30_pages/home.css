@@ -79,3 +79,41 @@ body {
    img {
     clip: rect(0px, 200px, 200px, 0px);
    }
+   .emailSend {
+    text-align: center;
+    margin-top: 5em;
+    color: white;
+  }
+  
+  .emailSend h1 {
+    color: #8b0000;
+    margin-bottom: 1em;
+  }
+  
+  .emailSend form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .emailSend input {
+    width: 300px;
+    margin: 0.5em 0;
+    padding: 0.5em;
+    border: 1px solid #8b0000;
+    border-radius: 4px;
+  }
+  
+  .emailSend button {
+    background-color: #8b0000;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1em;
+  }
+  
+  .emailSend button:hover {
+    background-color: #660000;
+  }
