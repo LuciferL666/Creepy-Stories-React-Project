@@ -14,6 +14,7 @@ export default function useForm(submitHandler, initialValues) {
     e.preventDefault();
 
     submitHandler(values);
+    setValues({ ...values, comment: "" });
   };
 
   return {
