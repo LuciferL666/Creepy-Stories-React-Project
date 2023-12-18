@@ -1,0 +1,70 @@
+.weather {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    z-index: 100;
+}
+
+.open-close {
+    background-color: #777;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.weather-card {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    width: 300px;
+    padding: 20px;
+    background-color: #777;
+    border-radius: 6px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.weather-open .weather-card {
+    display: block;
+}
+
+.city-form {
+    margin-bottom: 20px;
+}
+
+.location-input {
+    position: relative;
+}
+
+.location-input input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.weather-img img {
+    max-width: 120px;
+    /* Увеличете този размер */
+    max-height: 120px;
+    /* Увеличете този размер */
+    display: block;
+    margin: 10px auto;
+}
+
+
+.temperature {
+    color: #ff0000;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.condition {
+    color: #ff0000;
+    font-weight: bold;
+}
